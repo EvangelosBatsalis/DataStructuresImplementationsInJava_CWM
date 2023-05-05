@@ -5,7 +5,7 @@ public class Node {
     private int value;
     private Node next;
 
-    //instead of using getter and setter i will use constructor because there is no need of creating a node without a value
+    //instead of using getter and setter, I will use constructor because there is no need of creating a node without a value
     public Node(int value){
         this.value = value;
     }

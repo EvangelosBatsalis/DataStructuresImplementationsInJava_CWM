@@ -1,8 +1,7 @@
 package org.example;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Queue;
+import java.util.*;
+import java.util.LinkedList;
 import java.util.Stack;
 
 public class Main {
@@ -212,21 +211,17 @@ public class Main {
 */
 
         /* **** Hash Table ****  */
-        findFirstNonRepeatedCharacter();
+        CharFinder charFinder = new CharFinder();
+        System.out.println(charFinder.findFirstNonRepeatedCharacterWithHashMap("a green apple"));
+        System.out.println(charFinder.findFirstRepeatedCharacterWithHashSet("green apple"));
 
-    }
-
-    //hash table finds the first non-repeated character
-    public static void findFirstNonRepeatedCharacter() {
-        String phrase = "a green apple";
-        Map<Character, Integer> hashMap = new HashMap<>();
-
-        for (char ch : phrase.toCharArray()){
-            if(Character.isLetter(ch)){
-                hashMap.put(ch, hashMap.getOrDefault(ch, 0)+1);
-            }
-        }
-        System.out.println(hashMap);
+        //Creation of Hash Table using Linklist and collision detection: chaining
+        HashTable hashTable = new HashTable();
+        hashTable.put(1, "Vagos1");
+        hashTable.put(2, "Vagos2");
+        System.out.println(hashTable.get(2));
+        hashTable.remove(2);
+        System.out.println(hashTable.get(2));
     }
 
 

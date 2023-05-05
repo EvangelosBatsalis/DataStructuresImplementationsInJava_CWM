@@ -66,7 +66,7 @@ public class LinkedList {
         current = null;
         size--;
 
-/*      CodeWithMosh's way
+/*      CWM's way
         var current = first.getNext();
         first.setNext(null);
         first = current
