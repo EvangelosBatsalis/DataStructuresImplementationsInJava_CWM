@@ -222,6 +222,12 @@ public class Main {
         System.out.println(hashTable.get(2));
         hashTable.remove(2);
         System.out.println(hashTable.get(2));
+
+
+
+
+
+
     }
 
 
