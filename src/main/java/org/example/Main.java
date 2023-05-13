@@ -217,12 +217,13 @@ public class Main {
 
         //Creation of Hash Table using Linklist and collision detection: chaining
         HashTable hashTable = new HashTable();
-        hashTable.put(1, "Vagos1");
-        hashTable.put(2, "Vagos2");
-        System.out.println(hashTable.get(2));
-        hashTable.remove(2);
-        System.out.println(hashTable.get(2));
+        hashTable.put(6,"A");
+        hashTable.put(8, "B");
+        hashTable.put(6,"A+");
+        hashTable.put(11,"C11");
+        hashTable.put(21,"C21");
 
+        System.out.println("Run debuger");
 
 
 
