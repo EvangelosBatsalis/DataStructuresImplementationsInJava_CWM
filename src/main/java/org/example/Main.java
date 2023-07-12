@@ -211,24 +211,47 @@ public class Main {
 */
 
         /* **** Hash Table ****  */
-        CharFinder charFinder = new CharFinder();
-        System.out.println(charFinder.findFirstNonRepeatedCharacterWithHashMap("a green apple"));
-        System.out.println(charFinder.findFirstRepeatedCharacterWithHashSet("green apple"));
-
-        //Creation of Hash Table using Linklist and collision detection: chaining
-        HashTable hashTable = new HashTable();
-        hashTable.put(6,"A");
-        hashTable.put(8, "B");
-        hashTable.put(6,"A+");
-        hashTable.put(11,"C11");
-        hashTable.put(21,"C21");
-
-        System.out.println("Run debuger");
-
-
+//        CharFinder charFinder = new CharFinder();
+//        System.out.println(charFinder.findFirstNonRepeatedCharacterWithHashMap("a green apple"));
+//        System.out.println(charFinder.findFirstRepeatedCharacterWithHashSet("green apple"));
+//
+//        //Creation of Hash Table using Linklist and collision detection: chaining
+//        HashTable hashTable = new HashTable();
+//        hashTable.put(6,"A");
+//        hashTable.put(8, "B");
+//        hashTable.put(6,"A+");
+//        hashTable.put(11,"C11");
+//        hashTable.put(21,"C21");
+//
+//        System.out.println("Run debuger");
 
 
+        /* **** Binary Tree ****  */
+        Tree tree = new Tree();
+            tree.insert(7);
+            tree.insert(4);
+            tree.insert(9);
+            tree.insert(1);
+            tree.insert(6);
+            tree.insert(8);
+            tree.insert(10);
+        System.out.println("Pre order traverse: ");
+        tree.traversePreOrder();
+        System.out.println("\nIn order traverse: ");
+        tree.traverseInOrder();
+        System.out.println("\nPost order traverse: ");
+        tree.traversePostOrder();
+        System.out.print("\nHeight of the tree: "+tree.height());
+        System.out.print("\nMinimum value of the tree: "+tree.min());
 
+        Tree tree2 = new Tree();
+        tree.insert(7);
+        tree.insert(4);
+        tree.insert(9);
+        tree.insert(1);
+        tree.insert(6);
+        tree.insert(8);
+        tree.insert(10);
     }
 
 
