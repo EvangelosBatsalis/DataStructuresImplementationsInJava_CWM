@@ -156,9 +156,13 @@ public class Tree {
     }
 
     // TODO: 11/7/2023 equal method (checking if two trees are equal using recursion)
-    public Boolean equal(Node root){
+    public Boolean equal(Tree tree){
 
-        System.out.println();
+        if((this.root.lefChild == null && this.root.rightChild == null) || (tree.root.lefChild == null && tree.root.rightChild == null)){
+            return false;
+        }
+
+
 
         return false;
     }
