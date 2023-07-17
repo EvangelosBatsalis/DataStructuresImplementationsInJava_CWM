@@ -158,8 +158,15 @@ public class Tree {
     // TODO: 11/7/2023 equal method (checking if two trees are equal using recursion)
     public Boolean equal(Tree tree){
 
-        if((this.root.lefChild == null && this.root.rightChild == null) || (tree.root.lefChild == null && tree.root.rightChild == null)){
-            return false;
+//        if((this.root.lefChild == null && this.root.rightChild == null) || (tree.root.lefChild == null && tree.root.rightChild == null)){
+//            return false;
+//        }
+        while(this.root != null && tree.root != null){
+            if(this.root.value != tree.root.value)
+                return false;
+            else if(this.root == this.root.lefChild && this){
+
+            }
         }
 
 

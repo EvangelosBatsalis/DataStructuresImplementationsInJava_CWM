@@ -254,7 +254,7 @@ public class Main {
         tree2.insert(10);
 
 
-        tree.equal(tree2);
+        System.out.println("\nAre trees equal?, :"+tree.equal(tree2));
 
 
 
