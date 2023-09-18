@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.*;
-import java.util.LinkedList;
 import java.util.Stack;
 
 public class Main {
@@ -227,7 +226,7 @@ public class Main {
 
 
         /* **** Binary Tree ****  */
-        Tree tree = new Tree();
+        Tree_Original tree = new Tree_Original();
             tree.insert(7);
             tree.insert(4);
             tree.insert(9);
@@ -244,7 +243,7 @@ public class Main {
         System.out.print("\nHeight of the tree: "+tree.height());
         System.out.print("\nMinimum value of the tree: "+tree.min());
 
-        Tree tree2 = new Tree();
+        Tree_Original tree2 = new Tree_Original();
         tree2.insert(7);
         tree2.insert(4);
         tree2.insert(9);
