@@ -226,7 +226,7 @@ public class Main {
 
 
         /* **** Binary Tree ****  */
-        Tree_Original tree = new Tree_Original();
+        Tree tree = new Tree();
             tree.insert(7);
             tree.insert(4);
             tree.insert(9);
@@ -243,7 +243,7 @@ public class Main {
         System.out.print("\nHeight of the tree: "+tree.height());
         System.out.print("\nMinimum value of the tree: "+tree.min());
 
-        Tree_Original tree2 = new Tree_Original();
+        Tree tree2 = new Tree();
         tree2.insert(7);
         tree2.insert(4);
         tree2.insert(9);
@@ -252,9 +252,9 @@ public class Main {
         tree2.insert(8);
         tree2.insert(10);
 
+        System.out.println("\n"+tree.equals(tree2));
 
-        System.out.println("\nAre trees equal?, :"+tree.equal(tree2));
-
+//        System.out.println("\nAre trees equal?, :"+tree.equal(tree2));
 
 
     }
