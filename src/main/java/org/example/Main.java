@@ -227,21 +227,21 @@ public class Main {
 
         /* **** Binary Tree ****  */
         Tree tree = new Tree();
-            tree.insert(7);
-            tree.insert(4);
-            tree.insert(9);
-            tree.insert(1);
-            tree.insert(6);
-            tree.insert(8);
-            tree.insert(10);
+        tree.insert(7);
+        tree.insert(4);
+        tree.insert(9);
+        tree.insert(1);
+        tree.insert(6);
+        tree.insert(8);
+        tree.insert(10);
         System.out.println("Pre order traverse: ");
         tree.traversePreOrder();
         System.out.println("\nIn order traverse: ");
         tree.traverseInOrder();
         System.out.println("\nPost order traverse: ");
         tree.traversePostOrder();
-        System.out.print("\nHeight of the tree: "+tree.height());
-        System.out.print("\nMinimum value of the tree: "+tree.min());
+        System.out.print("\nHeight of the tree: " + tree.height());
+        System.out.print("\nMinimum value of the tree: " + tree.min());
 
         Tree tree2 = new Tree();
         tree2.insert(7);
@@ -252,9 +252,13 @@ public class Main {
         tree2.insert(8);
         tree2.insert(10);
 
-        System.out.println("\n"+tree.equals(tree2));
+        System.out.println("\n" + tree.equals(tree2));
 
 //        System.out.println("\nAre trees equal?, :"+tree.equal(tree2));
+
+        tree.kDistanceFromRoot(2);
+        tree.sizeOfAllNodes();
+        System.out.println("ok");
 
 
     }

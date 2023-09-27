@@ -125,7 +125,7 @@ public class Tree {
     }
 
     // TODO: 11/7/2023 minimum value in a Tree
-    //Search Binary tree (O(logn) Time complexity)
+    //Search Binary tree (O(nlogn) Time complexity)
     private int minAtSearchBinaryTree(Node root) {
         //null pointer exception
         if (root == null)
@@ -141,9 +141,10 @@ public class Tree {
     }
 
     //Simple Binary Tree (O(n) Time complexity because of traversing all the nodes of tree)
-    public int min(){
+    public int min() {
         return min(root);
     }
+
     private int min(Node root) {
         //base condition
         if (root.leftChild == null && root.rightChild == null)
@@ -156,24 +157,87 @@ public class Tree {
     }
 
     // TODO: 11/7/2023 equal method (checking if two trees are equal using recursion)
-    public boolean equals(Tree tree){
+    public boolean equals(Tree tree) {
         return equals(root, tree.root);
     }
 
-    private Boolean equals(Node firstTree,Node secondTree) {
+    private Boolean equals(Node firstTree, Node secondTree) {
         //Base conditions 1: If they are both empty or one of the trees
-        if(firstTree == null && secondTree == null) return true;
-        if(firstTree == null || secondTree == null) return false;
+        if (firstTree == null && secondTree == null) return true;
+        if (firstTree == null || secondTree == null) return false;
 
-        if(firstTree != null && secondTree != null)
+        if (firstTree != null && secondTree != null)
             return firstTree.value == secondTree.value &&
                     equals(firstTree.leftChild, secondTree.rightChild) &&
                     equals(firstTree.rightChild, secondTree.leftChild);
-
         return false;
     }
 
+    // TODO: 21/9/23 Validating binary search tree (explanation this algorithm checks if the tree is a search tree using recursion)
+    public Boolean isBinarySearchTree() {
+        return isBinarySearchTree(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
 
+    private Boolean isBinarySearchTree(Node root, int min, int max) {
+        if (root == null) return true;
+
+        if (root.value < min || root.value > max) {
+            return false;
+        }
+        return
+                isBinarySearchTree(root.leftChild, min, root.value - 1) &&
+                        isBinarySearchTree(root.rightChild, root.value + 1, max);
+    }
+
+
+    // TODO: 21/9/23 K Distance from the root (explanation: it prints all the nodes from given k distance from the root)
+    private void kDistanceFromRoot(Node root, int kDistance) {
+        if (root == null) {
+            System.out.println("The Tree is empty");
+            return;
+        }
+        if (kDistance == 0) {
+            System.out.println(root.value);
+            return;
+        }
+
+        kDistanceFromRoot(root.leftChild, kDistance - 1);
+        kDistanceFromRoot(root.rightChild, kDistance - 1);
+    }
+
+    int kDistance;
+
+    public void kDistanceFromRoot(int kDistance) {
+        kDistanceFromRoot(root, kDistance);
+    }
+
+    //Exercises
+    // TODO: 27/9/23 size of all nodes to a tree
+    public void sizeOfAllNodes() {
+        sizeOfAllNodes(root);
+    }
+
+    private void sizeOfAllNodes(Node root) {
+        var current = root;
+        int size = 0;
+
+        if(root != null) size++;
+        while (current != null) {
+            current = current.leftChild;
+            size++;
+        }
+        current = root;
+        while (current != null) {
+            current = current.rightChild;
+            size++;
+        }
+        System.out.println("The size is: " + size);
+
+
+    }
+
+    // TODO: 27/9/23 number of all leaves in a tree
+    // TODO: 27/9/23 maximum value using recursion
 
 
 }
