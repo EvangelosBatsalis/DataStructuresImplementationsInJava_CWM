@@ -3,6 +3,7 @@ package org.example;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Tree {
     private Node root;
@@ -263,15 +264,18 @@ public class Tree {
     }
 
     // TODO: 27/9/23 number of all leaves in a tree
-    //try with recursion
-//        var list = new ArrayList<Integer>();
-//        Node current = root;
-//
-//            if (root.leftChild == null && root.rightChild == null) list.add(root.value);
-//            else if(current.leftChild == null || current.rightChild == null) list.add(current.value);
-//        sizeOfAllNodes(current.leftChild);
-//        sizeOfAllNodes(current.rightChild);
-//
+    public void printAllLeavesInATree() {
+        printAllLeavesInATree(root);
+    }
+
+    private void printAllLeavesInATree(Node root) {
+        if (root == null) return;
+        if (root.leftChild == null && root.rightChild == null) System.out.print(root.value + " ");
+        else {
+            printAllLeavesInATree(root.leftChild);
+            printAllLeavesInATree(root.rightChild);
+        }
+    }
 
     // TODO: 27/9/23 maximum value using recursion
 

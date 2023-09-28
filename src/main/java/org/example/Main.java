@@ -260,7 +260,7 @@ public class Main {
         tree.sizeOfAllNodesWithoutRecursion();
         System.out.println("The size with recursion is: " + tree.sizeOfAllNodesWithRecursion());
         System.out.println("ok");
-
+        tree.printAllLeavesInATree();
 
     }
 
