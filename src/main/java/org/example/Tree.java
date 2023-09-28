@@ -1,5 +1,9 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+
 public class Tree {
     private Node root;
 
@@ -212,16 +216,16 @@ public class Tree {
     }
 
     //Exercises
-    // TODO: 27/9/23 size of all nodes to a tree
-    public void sizeOfAllNodes() {
-        sizeOfAllNodes(root);
+    // TODO: 27/9/23 size of all nodes to a tree without recursion
+    public void sizeOfAllNodesWithoutRecursion() {
+        sizeOfAllNodesWithoutRecursion(root);
     }
 
-    private void sizeOfAllNodes(Node root) {
+    private void sizeOfAllNodesWithoutRecursion(Node root) {
         var current = root;
         int size = 0;
 
-        if(root != null) size++;
+        if (root != null) size++;
         while (current != null) {
             current = current.leftChild;
             size++;
@@ -231,12 +235,44 @@ public class Tree {
             current = current.rightChild;
             size++;
         }
-        System.out.println("The size is: " + size);
-
+        System.out.println("The size without recursion is: " + size);
 
     }
 
+    // TODO: 27/9/23 size of all nodes to a tree with recursion
+    public int sizeOfAllNodesWithRecursion() {
+        return sizeOfAllNodesWithRecursion(root);
+    }
+
+    private int sizeOfAllNodesWithRecursion(Node root) {
+        var current = root;
+        int size = 0;
+
+        //Base condition
+        if (current == null) return 0;
+
+        if (current.leftChild != null) {
+            size += sizeOfAllNodesWithRecursion(current.leftChild);
+        }
+        if (current.rightChild != null) {
+            size += sizeOfAllNodesWithRecursion(current.rightChild);
+
+        }
+
+        return size + 1;
+    }
+
     // TODO: 27/9/23 number of all leaves in a tree
+    //try with recursion
+//        var list = new ArrayList<Integer>();
+//        Node current = root;
+//
+//            if (root.leftChild == null && root.rightChild == null) list.add(root.value);
+//            else if(current.leftChild == null || current.rightChild == null) list.add(current.value);
+//        sizeOfAllNodes(current.leftChild);
+//        sizeOfAllNodes(current.rightChild);
+//
+
     // TODO: 27/9/23 maximum value using recursion
 
 

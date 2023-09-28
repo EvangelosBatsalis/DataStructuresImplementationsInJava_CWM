@@ -257,7 +257,8 @@ public class Main {
 //        System.out.println("\nAre trees equal?, :"+tree.equal(tree2));
 
         tree.kDistanceFromRoot(2);
-        tree.sizeOfAllNodes();
+        tree.sizeOfAllNodesWithoutRecursion();
+        System.out.println("The size with recursion is: " + tree.sizeOfAllNodesWithRecursion());
         System.out.println("ok");
 
 
